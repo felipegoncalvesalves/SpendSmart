@@ -1,31 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/category_layout"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:orientation="horizontal"
-    android:background="@drawable/filter_chips_background"
     android:gravity="center_vertical">
 
-    <ImageView
-        android:id="@+id/category_icon"
-        android:layout_width="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_height="wrap_content"
-        android:src="@drawable/ic_credit_card" />
-
-    <TextView
-        android:id="@+id/tv_category"
+    <LinearLayout
+        android:id="@+id/linearLayout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="STUDY"
         android:layout_marginStart="8dp"
-        android:paddingTop="8dp"
-        android:paddingEnd="16dp"
-        android:paddingBottom="8dp"
-        android:textColor="@drawable/filter_text_color"
-        android:textStyle="bold" >
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-    </TextView>
-</LinearLayout>
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:background="@drawable/filter_chips_background">
+
+            <ImageView
+                android:id="@+id/category_icon"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:backgroundTint="@color/rajah"
+                android:src="@drawable/ic_help"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+            android:id="@+id/tv_category"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="STUDY"
+            android:textColor="@color/rajah"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

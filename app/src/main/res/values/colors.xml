@@ -3,9 +3,13 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="purple">#9370DB</color>
-    <color name="yellow">#FFFF00</color>
-    <color name="terracotta">#e57e6c</color>
+    <color name="yellow">#f7e04b</color>
+    <color name="terracotta">#edad9c</color>
     <color name="red">#FF0000</color>
-    <color name="green">#00FF00</color>
-    <color name="blue">#0000FF</color>
+    <color name="green">#a0cfa5</color>
+    <color name="blue">#39a3d0</color>
+    <color name="gray">#a6a6a6</color>
+    <color name="rajah">#f7a87e</color>
+    <color name="bege">#f4d3c3</color>
+    <color name="selected_color">#FF4081</color>
 </resources>

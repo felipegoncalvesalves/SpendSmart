@@ -7,5 +7,5 @@ data class ExpenseUiData(
     val price: String,
     val category: String,
     val icon: Int,
-    val color: Int?
+    val color: Int
 )

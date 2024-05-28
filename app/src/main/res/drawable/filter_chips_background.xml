@@ -3,7 +3,7 @@
     <!-- Selected state -->
     <item android:state_selected="true">
         <shape android:shape="rectangle">
-            <solid android:color="@color/purple" />
+            <solid android:color="@color/rajah" />
             <corners android:radius="200dp" />
         </shape>
         <color android:color="@android:color/white"/>
@@ -13,8 +13,8 @@
     <item>
         <shape android:shape="rectangle">
             <corners android:radius="24dp" />
-            <stroke android:width="2dp" android:color="@color/terracotta" />
+            <stroke android:width="2dp" android:color="@color/rajah" />
         </shape>
-        <color android:color="@color/terracotta"/>
+        <color android:color="@color/black"/>
     </item>
 </selector>

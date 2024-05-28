@@ -6,7 +6,7 @@
     android:padding="16dp">
 
     <TextView
-        android:id="@+id/tv_title"
+        android:id="@+id/tv_title_total"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -27,7 +27,7 @@
             android:layout_height="40dp"
             android:layout_marginStart="8dp"
             android:layout_marginTop="30dp"
-            android:src="@drawable/ic_credit_card" />
+            android:src="@drawable/ic_help" />
 
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
@@ -57,9 +57,11 @@
         android:textStyle="bold" />
 
     <GridLayout
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
+        android:columnCount="5"
+        android:orientation="horizontal"
         android:rowCount="3">
 
         <ImageButton
@@ -84,11 +86,11 @@
             android:src="@drawable/electric" />
 
         <ImageButton
-            android:id="@+id/im_btn_bus"
+            android:id="@+id/im_btn_car"
             android:layout_width="48dp"
             android:layout_height="48dp"
             android:background="?attr/selectableItemBackground"
-            android:src="@drawable/ic_bus" />
+            android:src="@drawable/ic_car" />
 
         <ImageButton
             android:id="@+id/im_btn_checkroom"
@@ -111,16 +113,38 @@
             android:background="?attr/selectableItemBackground"
             android:src="@drawable/wifi" />
 
+        <ImageButton
+            android:id="@+id/im_btn_buy"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:background="?attr/selectableItemBackground"
+            android:src="@drawable/ic_shopping_cart" />
+
+        <ImageButton
+            android:id="@+id/im_btn_gas_station"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:background="?attr/selectableItemBackground"
+            android:src="@drawable/ic_gas_station" />
+
+        <ImageButton
+            android:id="@+id/im_btn_water"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:background="?attr/selectableItemBackground"
+            android:src="@drawable/ic_water" />
+
     </GridLayout>
     <Button
         android:id="@+id/btn_category_create"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
+        android:layout_gravity="center"
         android:textColor="@color/white"
         android:layout_marginTop="16dp"
         android:backgroundTint="@color/terracotta"
         android:layout_marginEnd="8dp"
-        android:text="Create" />
+        android:text="CREATE" />
 
 </LinearLayout>

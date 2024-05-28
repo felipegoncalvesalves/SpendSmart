@@ -4,6 +4,15 @@
         <!-- Customize your light theme here. -->
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
     </style>
+    <style name="Theme.SpendSmart" parent="Base.Theme.SpendSmart"/>
 
-    <style name="Theme.SpendSmart" parent="Base.Theme.SpendSmart" />
+    <!-- Custom Button Style -->
+    <style name="CustomButtonStyle" parent="Widget.Material3.Button">
+        <item name="android:backgroundTint">@color/terracotta</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+    <style name="AppTheme.NoActionBar" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+    </style>
 </resources>

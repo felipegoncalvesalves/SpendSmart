@@ -3,6 +3,7 @@ package com.fdev.spendsmart
 import androidx.room.Entity
 import androidx.room.ForeignKey
 import androidx.room.PrimaryKey
+import com.fdev.spendsmart.category.CategoryEntity
 
 @Entity(
     foreignKeys = [
@@ -20,5 +21,5 @@ data class ExpenseEntity(
     val name: String,
     val icon: Int,
     val price: String,
-    val color: Int?
+    val color: Int
 )

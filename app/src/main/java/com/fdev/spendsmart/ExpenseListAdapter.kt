@@ -11,11 +11,10 @@ import androidx.recyclerview.widget.RecyclerView
 
 class ExpenseListAdapter :
     ListAdapter<ExpenseUiData, ExpenseListAdapter.ExpenseViewHolder>(ExpenseListAdapter) {
-        private lateinit var callback: (ExpenseUiData) -> Unit
-         fun setOnclickListener(onClick: (ExpenseUiData) -> Unit) {
-            callback = onClick
-
-        }
+    private lateinit var callback: (ExpenseUiData) -> Unit
+    fun setOnclickListener(onClick: (ExpenseUiData) -> Unit) {
+        this.callback = onClick
+    }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ExpenseViewHolder {
         val view =
@@ -30,16 +29,19 @@ class ExpenseListAdapter :
 
     class ExpenseViewHolder(private val view: View) : RecyclerView.ViewHolder(view.rootView) {
         private val tvCategory = view.findViewById<TextView>(R.id.tv_category_name)
-        private val icCategory = view.findViewById<ImageView>(R.id.blueButton)
+        private val imColorCategory = view.findViewById<ImageView>(R.id.color_Button)
+        private val imIconCategory = view.findViewById<ImageView>(R.id.category_icon_expense)
         private val tvExpense = view.findViewById<TextView>(R.id.tv_expense_name)
         private val priceExpense = view.findViewById<TextView>(R.id.tv_expense_price)
 
-        fun bind(expense: ExpenseUiData, callback: (ExpenseUiData) ->Unit ) {
+
+        fun bind(expense: ExpenseUiData,
+                 callback: (ExpenseUiData) ->Unit ) {
             tvCategory.text = expense.category
             tvExpense.text = expense.name
             priceExpense.text = expense.price
-            icCategory.visibility = View.VISIBLE
-
+            imColorCategory.setImageResource(expense.color)
+            imIconCategory.setImageResource(expense.icon)
             view.setOnClickListener{
                 callback.invoke(expense)
             }

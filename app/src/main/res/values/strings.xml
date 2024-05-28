@@ -2,11 +2,11 @@
     <string name="app_name">Spend Smart</string>
     <string name="home_title">Spend Smart</string>
     <string name="create_expense_title">Add a new expense </string>
-    <string name="create">create  </string>
+    <string name="create">CREATE  </string>
     <string name="update_expense_title">Updata expense </string>
     <string name="update">updata </string>
     <string name="category_delete_title">Important</string>
-    <string name="delete">Delete</string>
+    <string name="delete">DELETE</string>
     <string name="category_delete_description">By deleting a category you will delete all expense with this category, are you sure?  </string>
     <string name="no_empty_category_title">No category found!</string>
     <string name="no_empty_category_description">Please create a new one</string>

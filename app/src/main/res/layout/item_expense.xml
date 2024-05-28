@@ -17,37 +17,50 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
 
-            <LinearLayout
+            <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content">
 
                 <ImageView
-                    android:id="@+id/blueButton"
+                    android:id="@+id/color_Button"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    tools:background="@drawable/color_blue"
+                    tools:backgroundTint="@color/yellow"
+                    android:padding="5dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/category_icon_expense"
                     android:layout_width="30dp"
                     android:layout_height="30dp"
-                    android:layout_marginStart="5dp"
-                    android:layout_marginTop="8dp"
-                    android:background="@drawable/color_blue"
+                    android:layout_marginStart="3dp"
                     android:padding="5dp"
-                    android:src="@drawable/home"/>
+                    android:src="@drawable/home"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
                     android:id="@+id/tv_category_name"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="5dp"
-                    android:layout_marginTop="8dp"
-                    android:layout_marginBottom="4dp"
+                    android:layout_marginStart="3dp"
                     android:textSize="14sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/color_Button"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/color_Button"
+                    app:layout_constraintTop_toTopOf="parent"
                     tools:text="STUDY" />
 
-            </LinearLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
@@ -78,7 +91,6 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
-
 
         </LinearLayout>
 
