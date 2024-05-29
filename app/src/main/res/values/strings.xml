@@ -4,7 +4,7 @@
     <string name="create_expense_title">Add a new expense </string>
     <string name="create">CREATE  </string>
     <string name="update_expense_title">Updata expense </string>
-    <string name="update">updata </string>
+    <string name="update">UPDATE </string>
     <string name="category_delete_title">Important</string>
     <string name="delete">DELETE</string>
     <string name="category_delete_description">By deleting a category you will delete all expense with this category, are you sure?  </string>

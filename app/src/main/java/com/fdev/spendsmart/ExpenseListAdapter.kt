@@ -42,8 +42,10 @@ class ExpenseListAdapter :
             priceExpense.text = expense.price
             imColorCategory.setImageResource(expense.color)
             imIconCategory.setImageResource(expense.icon)
+
             view.setOnClickListener{
                 callback.invoke(expense)
+
             }
         }
     }
