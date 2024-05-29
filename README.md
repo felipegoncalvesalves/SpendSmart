@@ -4,7 +4,7 @@ O aplicativo Spend Smart foi desenvolvido para ajudar os usuários a gerenciar s
 
 ## :camera_flash: Screenshots
 <!-- You can add more screenshots here if you like -->
-<img src="/result/Screenshot_5.png" width="195">&emsp;<img src="/result/Screenshot_4.png" width="195">&emsp;<img src="/result/Screenshot_1.png" width="195"><img src="/result/Screenshot_2.png" width="195">
+<img src="/Screenshot_5.png" width="195">&emsp;<img src="/result/Screenshot_4.png" width="195">&emsp;<img src="/result/Screenshot_1.png" width="195"><img src="/result/Screenshot_2.png" width="195">
 
 
 ## Tecnologias
