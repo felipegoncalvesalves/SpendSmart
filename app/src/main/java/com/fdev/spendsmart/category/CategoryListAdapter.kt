@@ -16,6 +16,7 @@ class CategoryListAdapter :
 
     private lateinit var onClick: (CategoryUiData) -> Unit
     private lateinit var onLongClick: (CategoryUiData) -> Unit
+    private val allCategoryViews = mutableListOf<View>()
 
     fun setOnClickListener(onClick: (CategoryUiData) -> Unit) {
         this.onClick = onClick
@@ -33,16 +34,18 @@ class CategoryListAdapter :
 
     override fun onBindViewHolder(holder: CategoryViewHolder, position: Int) {
         val category = getItem(position)
-        holder.bind(category, onClick, onLongClick)
+        holder.bind(category, onLongClick, onClick, allCategoryViews)
     }
 
-    class CategoryViewHolder(private val view: View) : RecyclerView.ViewHolder(view) {
+    inner class CategoryViewHolder(private val view: View) : RecyclerView.ViewHolder(view) {
         private val tvCategory = view.findViewById<TextView>(R.id.tv_category)
         private val ivCategoryIcon: ImageView = view.findViewById(R.id.category_icon)
 
         fun bind(category: CategoryUiData,
                  onLongClick: (CategoryUiData) -> Unit,
-                 onClick: (CategoryUiData) -> Unit) {
+                 onClick: (CategoryUiData) -> Unit,
+                 allCategoryViews: MutableList<View>) {
+
             tvCategory.text = category.name
             tvCategory.isSelected = category.isSelected
 
@@ -58,13 +61,28 @@ class CategoryListAdapter :
                 ivCategoryIcon.visibility = View.GONE
             }
 
+            if (!allCategoryViews.contains(view)) {
+                allCategoryViews.add(view)
+            }
+
             view.setOnClickListener {
                 onClick.invoke(category)
+                highlightSelectedCategory(view, allCategoryViews)
             }
-            view.setOnLongClickListener{
+
+            view.setOnLongClickListener {
                 onLongClick.invoke(category)
                 true
             }
+        }
+
+        private fun highlightSelectedCategory(selectedCategoryView: View, allCategoryViews: List<View>) {
+            for (view in allCategoryViews) {
+                val iconView = view.findViewById<ImageView>(R.id.category_icon)
+                iconView.setBackgroundResource(android.R.color.transparent)
+            }
+            val selectedIconView = selectedCategoryView.findViewById<ImageView>(R.id.category_icon)
+            selectedIconView.setBackgroundResource(R.drawable.filter_chips_background)
         }
     }
 

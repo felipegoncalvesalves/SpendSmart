@@ -91,6 +91,6 @@ class CreateCategoryBottomSheet(
         for (button in allButtons) {
             button.setBackgroundResource(android.R.color.transparent)
         }
-        selectedButton.setBackgroundResource(R.drawable.filter_chips_background)
+        selectedButton.setBackgroundResource(R.drawable.filter_background_expense)
     }
 }

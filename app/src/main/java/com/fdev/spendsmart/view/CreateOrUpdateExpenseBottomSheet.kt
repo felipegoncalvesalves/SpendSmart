@@ -13,7 +13,9 @@ import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.widget.AppCompatButton
+import androidx.core.view.children
 import androidx.core.view.isVisible
+import androidx.core.view.iterator
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.fdev.spendsmart.ExpenseUiData
@@ -116,6 +118,10 @@ class CreateOrUpdateExpenseBottomSheet(
         categoryAdapter = CategoryListAdapter().apply {
             setOnClickListener { category ->
                 selectedCategory = category
+                val selectedCategoryView = rvCategories.findViewHolderForAdapterPosition(currentList.indexOf(category))?.itemView
+                if (selectedCategoryView != null) {
+                    highlightSelectedCategory(selectedCategoryView, rvCategories.children.toList())
+                }
             }
             setOnLongClickListener {   category ->
             }
@@ -190,6 +196,16 @@ class CreateOrUpdateExpenseBottomSheet(
         }
 
         return view
+    }
+
+    private fun highlightSelectedCategory(selectedCategoryView: View, allCategoryViews: List<View>) {
+        for (view in allCategoryViews) {
+            view.setBackgroundResource(android.R.color.transparent)
+            val iconView = view.findViewById<ImageView>(R.id.category_icon)
+            iconView.setBackgroundResource(android.R.color.transparent)
+        }
+        val selectedIconView = selectedCategoryView.findViewById<ImageView>(R.id.category_icon)
+        selectedIconView.setBackgroundResource(R.drawable.filter_chips_background)
     }
 
     private fun updateColorButtonTint(color: Int) {

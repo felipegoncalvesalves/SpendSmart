@@ -86,7 +86,18 @@ class MainActivity : AppCompatActivity() {
             showCreateUpdateExpenseBottomSheet(expense)
         }
 
-        categoryAdapter.setOnClickListener { categoryToBeDelete ->
+        categoryAdapter.setOnClickListener { selected ->
+
+            if (selected.name != "ALL") {
+                filterExpenseByCategoryName(selected.name)
+            } else {
+                lifecycleScope.launch(Dispatchers.IO) {
+                    getExpensesFromDataBase()
+                }
+            }
+
+        }
+        categoryAdapter.setOnLongClickListener { categoryToBeDelete ->
             if (categoryToBeDelete.name != "ALL") {
                 val title: String = this.getString(R.string.category_delete_title)
                 val description: String = this.getString(R.string.category_delete_description)
@@ -107,17 +118,7 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
-        categoryAdapter.setOnLongClickListener { selected ->
 
-            if (selected.name != "ALL") {
-                filterExpenseByCategoryName(selected.name)
-            } else {
-                lifecycleScope.launch(Dispatchers.IO) {
-                    getExpensesFromDataBase()
-                }
-            }
-
-        }
 
         rvCategory.adapter = categoryAdapter
         lifecycleScope.launch(Dispatchers.IO) {
